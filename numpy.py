@@ -113,3 +113,8 @@ print(np.isnan(array1))
 print(np.nan_to_num(array1,nan=5))
 print(array1)
 print(np.isinf(array1))
+'''
+git rm --cached secret.txt
+git commit -m "Stop tracking secret.txt"
+git push
+'''
