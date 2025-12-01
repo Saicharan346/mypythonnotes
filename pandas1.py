@@ -39,3 +39,34 @@ filtered_rows=df[df["Column"]>value & df["Salary"]>50000]
 '''
 print(df[(df["Feature_1"]>20) &(df['Feature_2']>35)])#place multiple conditions in tuple
 print(df[(df["Feature_1"]>20) |(df['Feature_2']>35)])
+#to add a new column df['columnname']=somedata
+df['Feature_Hi']=df['Feature_1']*0.1
+
+'''
+.loc[rowindex,columnname]used to acess and modify a specific cell
+df.insert(loc,'Columnname',somedata)
+'''
+df.insert(5,"Feature_Hello","hello")
+print(df)
+df.loc[0,'Feature_1']=46
+print(df)
+df.drop(columns=['Feature_1'],inplace=True)#this is used to delete a column and in the main file i.e inplace=True
+print(df)
+#isnull() 
+print(df.isnull().sum())
+#dropna(axis,implace=True)#removes the roww(axis=0) and colum(axis=0) where there is null
+print(df.dropna(axis=0,inplace=True))
+#fillna(value,inplace)
+#df.fillna(0,inplace=True)
+'''
+Interpolation
+preserves data intergrity
+smooth trends
+avoid data loss
+used to fill missing values based on trend
+'''
+print(df)
+df.interpolate(method='linear',axis=0)
+print(df)
+#Sorting
+print(df.sort_values(by="Feature_2",ascending=False,inplace=True))#sorting in descending order
