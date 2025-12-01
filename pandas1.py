@@ -23,3 +23,19 @@ info() -method
 5-memory usage of the dataset
 '''
 print(df.info())
+print(df.describe())#Descriptive Statistical Analysis
+print(f"Shape: {df.shape}")
+print(f"Columns:{df.columns}")
+'''
+For accessing a column (selecting)
+column=df["Columnname"]
+or column=df["col1","col2",........]
+
+Filtering Rows based on condition
+Single Condition
+filtered_rows=df[df["Salary"]>50000]
+Multiple Conditions
+filtered_rows=df[df["Column"]>value & df["Salary"]>50000]
+'''
+print(df[(df["Feature_1"]>20) &(df['Feature_2']>35)])#place multiple conditions in tuple
+print(df[(df["Feature_1"]>20) |(df['Feature_2']>35)])
