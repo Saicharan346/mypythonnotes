@@ -8,4 +8,4 @@ print(df)
 data={'name':['Sai','Charan','Tej'],'marks':[12,13,13]}
 bf=pd.DataFrame(data)
 print(bf)
-df.to_csv('output.csv')
+df.to_csv('output.csv',index=False)
