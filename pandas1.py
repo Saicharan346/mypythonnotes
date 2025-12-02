@@ -1,5 +1,5 @@
 import pandas as pd  # This line is essential!
-
+import emoji
 # Read the CSV file
 #df = pd.read_csv("smpledata.csv")
 df=pd.read_excel("smpledata.xlsx")
@@ -69,4 +69,20 @@ print(df)
 df.interpolate(method='linear',axis=0)
 print(df)
 #Sorting
-print(df.sort_values(by="Feature_2",ascending=False,inplace=True))#sorting in descending order
+tf={ "Name":['Sai','Charan','Tej','Kande'],"Marks":[12,34,56,35]}
+tf=pd.DataFrame(tf)
+print(tf)
+tf.sort_values(by="Marks",ascending=False,inplace=True)#sorting in descending order
+'''
+if you want to sort based on two or more columns you can pass in a list and a list of asecending or descending false or true
+'''
+print(tf)
+hf=pd.read_csv('data.csv')
+print(hf)
+hf.sort_values(by="Rating",ascending=False,inplace=True)
+print(hf)
+print("I'm still alive 😀")
+print(hf['Rating'].sum())
+#grouping by certain factor
+grouped=hf.groupby('Rating')['Year'].sum()
+print(grouped)
